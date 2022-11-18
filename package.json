@@ -1,0 +1,35 @@
+{
+  "name": "unicorn-admin",
+  "description": "Sample app that demonstrates the power of building UI components using Marko, Vite and Fastify",
+  "version": "1.0.0",
+  "dependencies": {
+    "@fastify/compress": "^6.1.0",
+    "@fastify/static": "^6.4.0",
+    "@marko/fastify": "^1.1.1",
+    "@marko/tags-api-preview": "^0.6.1",
+    "chart.js": "^3.9.1",
+    "fastify": "^4.9.2",
+    "htmljs-parser": "^5.1.5",
+    "marko": "^5.22.0",
+    "node-fetch": "^3.3.0",
+    "raptor-pubsub": "^1.0.5",
+    "sass": "^1.54.1"
+  },
+  "devDependencies": {
+    "@marko/compiler": "^5.23.0",
+    "@marko/vite": "^2.3.9",
+    "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2",
+    "vite": "2.9"
+  },
+  "private": true,
+  "scripts": {
+    "build": "rimraf dist && npm run build:server && npm run build:client",
+    "build:client": "cross-env NODE_ENV=production vite build",
+    "build:server": "cross-env NODE_ENV=production vite build --ssr src/index.js",
+    "dev": "node --enable-source-maps index.js",
+    "dev:inspect": "node --inspect --enable-source-maps index.js",
+    "start": "cross-env NODE_ENV=production node --enable-source-maps index.js"
+  },
+  "type": "module"
+}
